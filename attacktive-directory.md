@@ -9,7 +9,7 @@ layout: default
 
 ## Recon
 
-Realizo primeiro um scan com o nmap para validar as portas abertas e os serviços rodando
+Começo realizando um scan com o nmap para validar as portas abertas e os serviços rodando
 ```sh
 sudo nmap -sV -sC -T4 -Pn attacktive.thm -v -oN nmap.scan
 ```
@@ -17,7 +17,7 @@ Percebemos que se trada de um Windows Server com o mome do dominio ***spookysec.
 
 ![Scan nmap](./images/walkthroughs/attacktive-directory/img.attacktive-2.png)
 
-Agora começa a ficar mais intereessante, pois como se trata de um DC inicialmente podemos procurar por diversos vetores de ataque.
+Agora começa a ficar mais intereessante, pois como se trata de um DC inicialmente podemos procurar por diversos vetores de ataque
 
 Como notamos na fase de Recon, o servidor possui um serviço chamado Kerberos
 
@@ -46,6 +46,10 @@ Sendo assim, após realizar a PoC notamos que sim, é possivel realizar ataques 
 Para isso vou utilizar uma worldlist com diversos nomes para fazer a enumeração e assim tentar conseguir acesso com algum usuario encontrado em outros serviços rodando no server.
 
 Então vamos continuar o nosso ataque.
+
+```sh
+kerbrute userenum --dc attacktive.thm -d spookysec.local userlist.txt | tee kerbrute.txt
+```
 
 ![Kerbrute](./images/walkthroughs/attacktive-directory/img.attacktive-5.png)
 
@@ -113,7 +117,9 @@ sudo /scripts/infra/evil-winrm/evil-winrm.rb -i spookysec.local -u administrator
 
 ![Shell-1](./images/walkthroughs/attacktive-directory/img.attacktive-11.png)
 
-Agora que estamos com uma shell como sysadmin, irei habilitar o RDP e ganhar um acesso grafico ao servidor, primeiro irei, desativar o firewall, depois habilitar o RDP e alterar a senha do "administrator".
+Agora que ganhamos uma shell no servidor, temos acesso completo a ele, então irei habilitar o RDP e ganhar um acesso grafico ao servidor.
+
+Primeiro irei, desativar o firewall, depois habilitar o RDP e alterar a senha do "administrator".
 
 ```sh
 netsh advfirewall set  currentprofile state off
