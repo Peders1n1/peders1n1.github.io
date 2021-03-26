@@ -4,7 +4,7 @@ layout: default
 # Attacktive Directory - 2021
 
 - ### Kerberos abuse
-- ### Brute force em Hashe
+- ### Brute force em Hash
 - ### Pass The Hash
 
 ## Recon
