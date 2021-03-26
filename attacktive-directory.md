@@ -42,7 +42,7 @@ E boom! O protocolo se comporta de forma diferente, respondendo com a flag "KRB:
 
 Sendo assim, após realizar a PoC notamos que sim, é possivel realizar ataques de enumeração de usuarios apartir do protocolo em questão, então bora hackear!
 
-Tendo isso em mente, vou utilizar uma worldlist com diversos nomes de usuarios para realozar a enumeração
+Tendo isso em mente, vou utilizar uma worldlist com diversos nomes de usuarios para realizar a enumeração
 
 Então vamos continuar o nosso ataque.
 
