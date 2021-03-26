@@ -9,7 +9,7 @@ layout: default
 
 ## Recon
 
-Começo realizando um scan com o nmap para validar as portas abertas e os serviços rodando
+Começo realizando um scan com o nmap para validar as portas abertas e os serviços em execução
 ```sh
 sudo nmap -sV -sC -T4 -Pn attacktive.thm -v -oN nmap.scan
 ```
